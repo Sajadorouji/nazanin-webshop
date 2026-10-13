@@ -1,0 +1,25 @@
+---
+layout: default
+title: Menu
+nav: menu
+band: true
+permalink: /menu/
+description: Eclairs, cream puffs, cakes, cheesecake, cookies and macarons. Homemade, fresh to order.
+---
+<section>
+  <h2 class="script">Homemade sweet bites</h2>
+  <p class="sub">Desserts made with love. Fresh to order.</p>
+
+  <div class="grid">
+    {% for p in site.data.products %}
+    <article class="card">
+      <div class="pic" style="background:{{ p.color }}">{{ p.emoji }}{% if p.image %}<img src="{{ '/assets/images/' | append: p.image | relative_url }}" alt="{{ p.name }}" onerror="this.remove()">{% endif %}</div>
+      <div class="body">
+        <h3>{{ p.name }}</h3>
+        <div class="flavors">{% for f in p.flavors %}<span>{{ f }}</span>{% endfor %}</div>
+        <a class="btn fill sm" href="{{ site.telegram }}" target="_blank" rel="noopener">Order on Telegram</a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>

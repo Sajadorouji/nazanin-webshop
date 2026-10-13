@@ -1,32 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Nazanin's Bakery</title>
-<meta name="description" content="This is where your taste buds go crazy. Homemade sweet bites, fresh to order.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header><div class="bar">
-  <a class="logo" href="index.html">Nazanin's Bakery</a>
-  <nav>
-    <a class="on" href="index.html">Home</a>
-    <a href="products.html">Menu</a>
-    <a href="about.html">About</a>
-  </nav>
-</div></header>
-
+---
+layout: default
+nav: home
+band: true
+---
 <div class="hero">
   <div class="blob b1"></div><div class="blob b2"></div>
   <span class="tag">Homemade · Fresh to order</span>
   <h1 class="script">Nazanin's<br>Bakery</h1>
   <p class="lead">This is where your taste buds go crazy.</p>
   <div class="cta">
-    <a class="btn fill" href="products.html">See the menu</a>
-    <a class="btn line" href="https://t.me/naz_pettit_bakary" target="_blank" rel="noopener">Order on Telegram</a>
+    <a class="btn fill" href="{{ '/menu/' | relative_url }}">See the menu</a>
+    <a class="btn line" href="{{ site.telegram }}" target="_blank" rel="noopener">Order on Telegram</a>
   </div>
 </div>
 
@@ -34,26 +18,6 @@
   <h2 class="script">Homemade sweet bites</h2>
   <p class="sub">Desserts made with love. Fresh to order.</p>
   <div class="strip">
-    <span class="chip">Eclair</span><span class="chip">Cream Puffs</span><span class="chip">Cake</span>
-    <span class="chip">Cheesecake</span><span class="chip">Cookies</span><span class="chip">Macarons</span>
+    {% for p in site.data.products %}<span class="chip">{{ p.name }}</span>{% endfor %}
   </div>
 </section>
-
-<div class="band">
-  <h2>Want a sweet bite?</h2>
-  <p>Send me a message and let's bake something for you.</p>
-  <div class="cta">
-    <a class="btn fill" href="https://t.me/naz_pettit_bakary" target="_blank" rel="noopener">Telegram</a>
-    <a class="btn line" href="https://instagram.com/naz_pettite_bakery" target="_blank" rel="noopener">Instagram</a>
-  </div>
-</div>
-
-<footer>
-  <div class="links">
-    <a href="https://instagram.com/naz_pettite_bakery" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://t.me/naz_pettit_bakary" target="_blank" rel="noopener">Telegram</a>
-  </div>
-  <div>© Nazanin's Bakery</div>
-</footer>
-</body>
-</html>

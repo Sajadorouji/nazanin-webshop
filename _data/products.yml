@@ -1,0 +1,38 @@
+# Add, remove or edit items here. The Menu page updates automatically.
+# image: file name inside assets/images/ (optional, emoji tile is shown if missing)
+
+- name: Eclair
+  emoji: "🍫"
+  color: "#e8c5c0"
+  image: eclair.jpg
+  flavors: [Tiramisu, Rose, Mascarpone, Vanilla, Chocolate]
+
+- name: Cream Puffs
+  emoji: "☁️"
+  color: "#f6dcc0"
+  image: cream-puffs.jpg
+  flavors: [Tiramisu, Rose, Cheese cake, Vanilla, Chocolate, Pistachio]
+
+- name: Cake
+  emoji: "🎂"
+  color: "#f0b8c4"
+  image: cake.jpg
+  flavors: [Chocolate, Mascarpone, Strawberry]
+
+- name: Cheesecake
+  emoji: "🍓"
+  color: "#d9a0b4"
+  image: cheesecake.jpg
+  flavors: [Strawberry, Mix of berries]
+
+- name: Cookies
+  emoji: "🍪"
+  color: "#efd9bd"
+  image: cookies.jpg
+  flavors: [Chocolate chips, Nut mix]
+
+- name: Macarons
+  emoji: "🌸"
+  color: "#dcc3b5"
+  image: macarons.jpg
+  flavors: [Chocolate, Mascarpone]

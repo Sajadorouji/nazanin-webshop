@@ -1,0 +1,18 @@
+title: Nazanin's Bakery
+description: This is where your taste buds go crazy. Homemade sweet bites, fresh to order.
+lang: en
+
+# Custom domain on the site root: leave baseurl empty.
+# If you use the plain username.github.io/repo-name address instead,
+# set baseurl to "/repo-name" (with the leading slash).
+baseurl: ""
+url: ""
+
+instagram: https://instagram.com/naz_pettite_bakery
+telegram: https://t.me/naz_pettit_bakary
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

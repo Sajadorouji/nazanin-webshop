@@ -1,24 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>About · Nazanin's Bakery</title>
-<meta name="description" content="Homemade desserts, baked with love and made fresh to order.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header><div class="bar">
-  <a class="logo" href="index.html">Nazanin's Bakery</a>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="products.html">Menu</a>
-    <a class="on" href="about.html">About</a>
-  </nav>
-</div></header>
-
+---
+layout: default
+title: About
+nav: about
+permalink: /about/
+description: Homemade desserts, baked with love and made fresh to order.
+---
 <section>
   <div class="about">
     <div class="art">🧁</div>
@@ -28,8 +14,8 @@
       <p>Everything is made with love and baked fresh to order, from eclairs and cream puffs to cakes, cheesecake, cookies and macarons.</p>
       <p>Apparently, my sweets cause dangerous cravings. Consider yourself warned.</p>
       <div class="cta" style="justify-content:flex-start;margin-top:22px">
-        <a class="btn fill" href="https://t.me/naz_pettit_bakary" target="_blank" rel="noopener">Message me on Telegram</a>
-        <a class="btn line" href="https://instagram.com/naz_pettite_bakery" target="_blank" rel="noopener">Instagram</a>
+        <a class="btn fill" href="{{ site.telegram }}" target="_blank" rel="noopener">Message me on Telegram</a>
+        <a class="btn line" href="{{ site.instagram }}" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
   </div>
@@ -40,13 +26,3 @@
     <div class="note"><b>Made with love</b><span>Every single bite</span></div>
   </div>
 </section>
-
-<footer>
-  <div class="links">
-    <a href="https://instagram.com/naz_pettite_bakery" target="_blank" rel="noopener">Instagram</a>
-    <a href="https://t.me/naz_pettit_bakary" target="_blank" rel="noopener">Telegram</a>
-  </div>
-  <div>© Nazanin's Bakery</div>
-</footer>
-</body>
-</html>
