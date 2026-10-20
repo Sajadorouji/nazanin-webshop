@@ -1,0 +1,39 @@
+# Banner slider on the home page. Edit, add or remove slides here.
+# image: file name inside assets/images/ (optional, a colored background is used if missing)
+# Use wide photos (about 1600x700) for the best look.
+
+- eyebrow: Homemade · Fresh to order
+  title: Where your taste buds go crazy
+  text: Desserts made with love, baked fresh just for you.
+  emoji: "🧁"
+  color: "linear-gradient(135deg,#f0b8c4,#f6d3b8)"
+  image: banner-welcome.jpg
+  button: See the menu
+  link: "#menu"
+
+- eyebrow: Highlight
+  title: Eclairs
+  text: Tiramisu, rose, mascarpone, vanilla or chocolate.
+  emoji: "🍫"
+  color: "linear-gradient(135deg,#e8c5c0,#d9a0b4)"
+  image: banner-eclair.jpg
+  button: Order on Telegram
+  link: telegram
+
+- eyebrow: Highlight
+  title: Cream Puffs
+  text: Six flavors, from pistachio to cheese cake.
+  emoji: "☁️"
+  color: "linear-gradient(135deg,#f6dcc0,#f0b8c4)"
+  image: banner-cream-puffs.jpg
+  button: Order on Telegram
+  link: telegram
+
+- eyebrow: Highlight
+  title: Macarons
+  text: Chocolate and mascarpone, small and perfect.
+  emoji: "🌸"
+  color: "linear-gradient(135deg,#dcc3b5,#e9b7c3)"
+  image: banner-macarons.jpg
+  button: Order on Telegram
+  link: telegram

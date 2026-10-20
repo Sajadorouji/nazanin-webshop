@@ -14,8 +14,10 @@
   <a class="logo" href="{{ '/' | relative_url }}">{{ site.title }}</a>
   <nav>
     <a {% if page.nav == 'home' %}class="on" {% endif %}href="{{ '/' | relative_url }}">Home</a>
-    <a {% if page.nav == 'menu' %}class="on" {% endif %}href="{{ '/menu/' | relative_url }}">Menu</a>
+    <a href="{{ '/#menu' | relative_url }}">Menu</a>
+    <a {% if page.nav == 'order' %}class="on" {% endif %}href="{{ '/order-delivery/' | relative_url }}">Order &amp; Delivery</a>
     <a {% if page.nav == 'about' %}class="on" {% endif %}href="{{ '/about/' | relative_url }}">About</a>
+    <a {% if page.nav == 'contact' %}class="on" {% endif %}href="{{ '/contact/' | relative_url }}">Contact</a>
   </nav>
 </div></header>
 

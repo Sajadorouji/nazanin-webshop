@@ -3,21 +3,22 @@ layout: default
 nav: home
 band: true
 ---
-<div class="hero">
-  <div class="blob b1"></div><div class="blob b2"></div>
-  <span class="tag">Homemade · Fresh to order</span>
-  <h1 class="script">Nazanin's<br>Bakery</h1>
-  <p class="lead">This is where your taste buds go crazy.</p>
-  <div class="cta">
-    <a class="btn fill" href="{{ '/menu/' | relative_url }}">See the menu</a>
-    <a class="btn line" href="{{ site.telegram }}" target="_blank" rel="noopener">Order on Telegram</a>
-  </div>
-</div>
+{% include slider.html %}
 
-<section>
+<section id="menu">
   <h2 class="script">Homemade sweet bites</h2>
   <p class="sub">Desserts made with love. Fresh to order.</p>
-  <div class="strip">
-    {% for p in site.data.products %}<span class="chip">{{ p.name }}</span>{% endfor %}
+
+  <div class="grid">
+    {% for p in site.data.products %}
+    <article class="card">
+      <div class="pic" style="background:{{ p.color }}">{{ p.emoji }}{% if p.image %}<img src="{{ '/assets/images/' | append: p.image | relative_url }}" alt="{{ p.name }}" onerror="this.remove()">{% endif %}</div>
+      <div class="body">
+        <h3>{{ p.name }}</h3>
+        <div class="flavors">{% for f in p.flavors %}<span>{{ f }}</span>{% endfor %}</div>
+        <a class="btn fill sm" href="{{ site.telegram }}" target="_blank" rel="noopener">Order on Telegram</a>
+      </div>
+    </article>
+    {% endfor %}
   </div>
 </section>

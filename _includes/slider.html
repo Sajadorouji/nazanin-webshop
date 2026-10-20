@@ -1,0 +1,77 @@
+<div class="slider" id="slider" aria-roledescription="carousel" aria-label="Product highlights">
+  <div class="track">
+    {% for s in site.data.slides %}
+    {% if s.link == 'telegram' %}{% assign href = site.telegram %}{% assign ext = true %}{% else %}{% assign href = s.link %}{% assign ext = false %}{% endif %}
+    <div class="slide" style="background:{{ s.color }}" aria-roledescription="slide" aria-label="{{ forloop.index }} of {{ forloop.length }}">
+      {% if s.image %}<img src="{{ '/assets/images/' | append: s.image | relative_url }}" alt="" onerror="this.remove()">{% endif %}
+      <div class="shade"></div>
+      <span class="emoji" aria-hidden="true">{{ s.emoji }}</span>
+      <div class="copy">
+        <span class="eyebrow">{{ s.eyebrow }}</span>
+        <h2>{{ s.title }}</h2>
+        <p>{{ s.text }}</p>
+        <a class="btn fill sm" href="{{ href }}"{% if ext %} target="_blank" rel="noopener"{% endif %}>{{ s.button }}</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <button class="nav prev" aria-label="Previous slide" type="button">‹</button>
+  <button class="nav next" aria-label="Next slide" type="button">›</button>
+  <div class="dots" role="tablist"></div>
+</div>
+
+<script>
+(function () {
+  var root = document.getElementById('slider');
+  if (!root) return;
+  var track = root.querySelector('.track');
+  var slides = root.querySelectorAll('.slide');
+  var dotsBox = root.querySelector('.dots');
+  var n = slides.length, idx = 0, timer = null;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  for (var i = 0; i < n; i++) {
+    var d = document.createElement('button');
+    d.type = 'button';
+    d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+    (function (k) { d.addEventListener('click', function () { go(k, true); }); })(i);
+    dotsBox.appendChild(d);
+  }
+  var dots = dotsBox.children;
+
+  function paint() {
+    for (var i = 0; i < dots.length; i++) dots[i].className = i === idx ? 'on' : '';
+  }
+  function go(k, user) {
+    idx = (k + n) % n;
+    track.scrollTo({ left: idx * track.clientWidth, behavior: reduce ? 'auto' : 'smooth' });
+    paint();
+    if (user) restart();
+  }
+  function restart() {
+    clearInterval(timer);
+    if (!reduce) timer = setInterval(function () { go(idx + 1); }, 5500);
+  }
+
+  root.querySelector('.prev').addEventListener('click', function () { go(idx - 1, true); });
+  root.querySelector('.next').addEventListener('click', function () { go(idx + 1, true); });
+
+  // keep dots in sync when the user swipes
+  var t;
+  track.addEventListener('scroll', function () {
+    clearTimeout(t);
+    t = setTimeout(function () {
+      idx = Math.round(track.scrollLeft / track.clientWidth);
+      paint();
+    }, 80);
+  });
+
+  root.addEventListener('mouseenter', function () { clearInterval(timer); });
+  root.addEventListener('mouseleave', restart);
+  root.addEventListener('touchstart', function () { clearInterval(timer); }, { passive: true });
+  window.addEventListener('resize', function () { track.scrollTo({ left: idx * track.clientWidth }); });
+
+  paint();
+  restart();
+})();
+</script>

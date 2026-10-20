@@ -84,3 +84,46 @@ footer .links a:hover{color:var(--wine)}
   nav{gap:14px;font-size:.88rem}
   .logo{font-size:1.3rem}
 }
+
+/* ---------- banner slider ---------- */
+.slider{position:relative;max-width:1000px;margin:22px auto 0;border-radius:28px;overflow:hidden;box-shadow:0 14px 40px rgba(138,31,61,.14)}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:start;position:relative;min-height:380px;display:flex;align-items:flex-end;overflow:hidden}
+.slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.slide .shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(94,18,40,.62),rgba(94,18,40,0) 62%)}
+.slide .emoji{position:absolute;right:7%;top:50%;transform:translateY(-58%);font-size:9rem;opacity:.9;pointer-events:none}
+.slide img ~ .emoji{display:none}
+.slide .copy{position:relative;z-index:1;padding:34px 38px 54px 80px;color:#fff;max-width:560px}
+.slide .eyebrow{display:inline-block;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;opacity:.9;margin-bottom:8px}
+.slide h2{font-family:'Lobster Two',cursive;font-size:clamp(2rem,6vw,3.2rem);line-height:1.05;margin-bottom:8px}
+.slide p{opacity:.95;margin-bottom:18px}
+.slide .btn.fill{background:#fff;color:var(--wine);border-color:#fff}
+.slide .btn.fill:hover{background:var(--blush);border-color:var(--blush)}
+.slider .nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.85);color:var(--wine);font-size:1.7rem;line-height:1;cursor:pointer;transition:.2s;z-index:2}
+.slider .nav:hover{background:#fff}
+.slider .prev{left:14px}.slider .next{right:14px}
+.dots{position:absolute;left:0;right:0;bottom:16px;display:flex;justify-content:center;gap:8px;z-index:2}
+.dots button{width:9px;height:9px;border-radius:50%;border:0;background:rgba(255,255,255,.55);cursor:pointer;padding:0;transition:.2s}
+.dots button.on{background:#fff;width:26px;border-radius:9px}
+#menu{scroll-margin-top:70px}
+
+/* ---------- info pages ---------- */
+.info{max-width:680px;margin:0 auto}
+.soon{background:var(--cream);border:2px dashed var(--rose);border-radius:22px;padding:30px;text-align:center}
+.soon b{display:block;font-family:'Lobster Two',cursive;font-size:1.5rem;color:var(--wine);margin-bottom:4px}
+.soon span{color:var(--muted)}
+.contact-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.linkcard{transition:.2s;display:block}
+.linkcard:hover{transform:translateY(-4px);box-shadow:0 10px 26px rgba(138,31,61,.12)}
+
+@media(max-width:700px){
+  .slider{margin:14px 14px 0;border-radius:22px}
+  .slide{min-height:340px}
+  .slide .emoji{font-size:3.4rem;top:12px;transform:none;right:16px}
+  .slide .copy{padding:26px 22px 52px}
+  .slider .nav{display:none}
+  .contact-cards{grid-template-columns:1fr}
+  nav{gap:12px;font-size:.8rem;flex-wrap:wrap;justify-content:flex-end}
+  .bar{flex-wrap:wrap;gap:8px}
+}
