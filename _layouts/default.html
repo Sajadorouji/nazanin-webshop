@@ -8,10 +8,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+<link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
 </head>
 <body>
 <header><div class="bar">
-  <a class="logo" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+<a class="logo" href="{{ '/' | relative_url }}"><img src="{{ '/assets/images/logo.png' | relative_url }}" alt="{{ site.title }}"></a>
   <nav>
     <a {% if page.nav == 'home' %}class="on" {% endif %}href="{{ '/' | relative_url }}">Home</a>
     <a href="{{ '/#menu' | relative_url }}">Menu</a>
