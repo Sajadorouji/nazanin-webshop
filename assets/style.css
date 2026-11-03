@@ -163,12 +163,12 @@ html.lock{overflow:hidden}
 @keyframes pmIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
 
 .pm-in{display:grid;grid-template-columns:1fr 1fr}
-.pm-img{position:relative;min-height:320px;display:grid;place-items:center;font-size:5rem;overflow:hidden}
-.pm-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pm-img{position:relative;min-height:320px;display:grid;place-items:center;font-size:5rem;overflow:hidden;place-items:center}
+.pm-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
 .pm-body{padding:34px 32px 30px;display:flex;flex-direction:column;gap:18px}
 .pm-body h3{font-family:'Lobster Two',cursive;font-size:2.2rem;line-height:1.7;color:var(--wine);padding-bottom: 20px}
-.pm-body p{color:var(--ink);line-height:1.7}
-.pm-facts{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:.92rem;padding-top:20px}
+.pm-body p{color:var(--ink);line-height:1.7;padding-bottom:20px}
+.pm-facts{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:.92rem}
 .pm-facts dt{color:var(--muted);font-weight:600}
 .pm-facts dd{margin:0}
 .pm-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;padding-top:20px}
