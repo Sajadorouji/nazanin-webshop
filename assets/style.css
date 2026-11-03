@@ -162,7 +162,7 @@ html.lock{overflow:hidden}
 .pm::backdrop{background:rgba(58,18,30,.55);backdrop-filter:blur(3px)}
 @keyframes pmIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
 
-.pm-in{display:grid;grid-template-columns:1fr 1fr}
+.pm-in{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
 .pm-img{position:relative;min-height:320px;display:grid;place-items:center;font-size:5rem;overflow:hidden;place-items:center}
 .pm-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
 .pm-body{padding:34px 32px 30px;display:flex;flex-direction:column;gap:18px}
