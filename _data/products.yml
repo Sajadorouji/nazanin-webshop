@@ -29,8 +29,8 @@
   image: cake.jpg
   description: A homemade cake, baked fresh to order for your celebration or just because.
   flavors: [Chocolate, Mascarpone, Strawberry]
-  # price: ""
-  # note: ""
+  price: "10$ each"
+  note: "5 day delivery notice"
 
 - name: Cheesecake
   emoji: "🍓"
@@ -47,8 +47,8 @@
   image: cookies.jpg
   description: Homemade cookies, baked fresh to order.
   flavors: [Chocolate chips, Nut mix]
-  # price: ""
-  # note: ""
+  price: "5$ per 3 cookies, 15$ for a box"
+  note: "3 day delivery notice"
 
 - name: Macarons
   emoji: "🌸"
