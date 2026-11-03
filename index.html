@@ -7,14 +7,22 @@ band: true
 
 <section id="menu">
   <h2 class="script">Homemade sweet bites</h2>
-  <p class="sub">Desserts made with love. Fresh to order.</p>
+  <p class="sub">Desserts made with love. Fresh to order. Tap a treat to see more.</p>
 
   <div class="grid">
     {% for p in site.data.products %}
-    <article class="card">
-      <div class="pic" style="background:{{ p.color }}">{{ p.emoji }}{% if p.image %}<img src="{{ '/assets/images/' | append: p.image | relative_url }}" alt="{{ p.name }}" onerror="this.remove()">{% endif %}</div>
+    <article class="card"
+      data-name="{{ p.name | escape }}"
+      data-desc="{{ p.description | escape }}"
+      data-flavors="{{ p.flavors | join: '|' | escape }}"
+      data-emoji="{{ p.emoji }}"
+      data-color="{{ p.color }}"
+      data-image="{% if p.image %}{{ '/assets/images/' | append: p.image | relative_url }}{% endif %}"
+      data-price="{{ p.price | escape }}"
+      data-note="{{ p.note | escape }}">
+      <div class="pic" style="background:{{ p.color }}">{{ p.emoji }}{% if p.image %}<img src="{{ '/assets/images/' | append: p.image | relative_url }}" alt="{{ p.name }}" onerror="this.remove()">{% endif %}<span class="badge" aria-hidden="true">Details</span></div>
       <div class="body">
-        <h3>{{ p.name }}</h3>
+        <h3><button type="button" class="more" aria-haspopup="dialog">{{ p.name }}<span class="sr"> – view details</span></button></h3>
         <div class="flavors">{% for f in p.flavors %}<span>{{ f }}</span>{% endfor %}</div>
         <a class="btn fill sm" href="{{ site.telegram }}" target="_blank" rel="noopener">Order on Telegram</a>
       </div>
@@ -22,3 +30,83 @@ band: true
     {% endfor %}
   </div>
 </section>
+
+<dialog id="pm" class="pm" aria-labelledby="pm-name">
+  <button type="button" class="pm-x" id="pm-x" aria-label="Close">×</button>
+  <div class="pm-in">
+    <div class="pm-img" id="pm-img"></div>
+    <div class="pm-body">
+      <h3 id="pm-name"></h3>
+      <p id="pm-desc"></p>
+      <div class="flavors" id="pm-flavors"></div>
+      <dl class="pm-facts" id="pm-facts"></dl>
+      <div class="pm-actions">
+        <a class="btn fill" href="{{ site.telegram }}" target="_blank" rel="noopener">Order on Telegram</a>
+        <button type="button" class="btn line" id="pm-close">Close</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  var dlg = document.getElementById('pm');
+  if (!dlg || typeof dlg.showModal !== 'function') return;
+  var $ = function (id) { return document.getElementById(id); };
+  var lastFocus = null;
+
+  function open(card) {
+    var d = card.dataset;
+    lastFocus = document.activeElement;
+    $('pm-name').textContent = d.name;
+
+    var desc = $('pm-desc');
+    desc.textContent = d.desc || '';
+    desc.style.display = d.desc ? '' : 'none';
+
+    var img = $('pm-img');
+    img.innerHTML = '';
+    img.style.background = d.color || '';
+    img.textContent = d.emoji || '';
+    if (d.image) {
+      var im = document.createElement('img');
+      im.alt = d.name;
+      im.onerror = function () { im.remove(); };
+      im.src = d.image;
+      img.appendChild(im);
+    }
+
+    var fl = $('pm-flavors');
+    fl.innerHTML = '';
+    (d.flavors ? d.flavors.split('|') : []).forEach(function (f) {
+      var s = document.createElement('span'); s.textContent = f; fl.appendChild(s);
+    });
+
+    var facts = $('pm-facts');
+    facts.innerHTML = '';
+    [['Price', d.price], ['Good to know', d.note]].forEach(function (row) {
+      if (!row[1]) return;
+      var dt = document.createElement('dt'), dd = document.createElement('dd');
+      dt.textContent = row[0]; dd.textContent = row[1];
+      facts.appendChild(dt); facts.appendChild(dd);
+    });
+    facts.style.display = facts.children.length ? '' : 'none';
+
+    document.documentElement.classList.add('lock');
+    dlg.showModal();
+    dlg.scrollTop = 0;
+  }
+
+  document.querySelectorAll('.card .more').forEach(function (b) {
+    b.addEventListener('click', function () { open(b.closest('.card')); });
+  });
+  $('pm-x').addEventListener('click', function () { dlg.close(); });
+  $('pm-close').addEventListener('click', function () { dlg.close(); });
+  // click on the dark backdrop (the dialog element itself) closes it
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+  dlg.addEventListener('close', function () {
+    document.documentElement.classList.remove('lock');
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  });
+})();
+</script>

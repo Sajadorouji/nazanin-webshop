@@ -1,38 +1,60 @@
-# Add, remove or edit items here. The Menu page updates automatically.
-# image: file name inside assets/images/ (optional, emoji tile is shown if missing)
+# Add, remove or edit items here. The Menu section on the home page updates automatically.
+#
+# description: shown in the pop-up when a visitor taps the product (write your own text)
+# price:       optional, shown in the pop-up only if you fill it in, e.g. "from €3.50 each"
+# note:        optional extra line, e.g. "Order 2 days ahead" or "Contains nuts"
+# image:       file name inside assets/images/ (optional, emoji tile is shown if missing)
 
 - name: Eclair
   emoji: "🍫"
   color: "#e8c5c0"
   image: eclair.jpg
+  description: A classic choux pastry filled with cream, made fresh to order. Choose your favorite flavor when you message me.
   flavors: [Tiramisu, Rose, Mascarpone, Vanilla, Chocolate]
+  # price: ""
+  # note: ""
 
 - name: Cream Puffs
   emoji: "☁️"
   color: "#f6dcc0"
   image: cream-puffs.jpg
+  description: Light choux puffs filled with cream, made fresh to order. Pick one flavor or mix a few.
   flavors: [Tiramisu, Rose, Cheese cake, Vanilla, Chocolate, Pistachio]
+  # price: ""
+  # note: ""
 
 - name: Cake
   emoji: "🎂"
   color: "#f0b8c4"
   image: cake.jpg
+  description: A homemade cake, baked fresh to order for your celebration or just because.
   flavors: [Chocolate, Mascarpone, Strawberry]
+  # price: ""
+  # note: ""
 
 - name: Cheesecake
   emoji: "🍓"
   color: "#d9a0b4"
   image: cheesecake.jpg
+  description: Creamy homemade cheesecake with a fruity finish, made fresh to order.
   flavors: [Strawberry, Mix of berries]
+  # price: ""
+  # note: ""
 
 - name: Cookies
   emoji: "🍪"
   color: "#efd9bd"
   image: cookies.jpg
+  description: Homemade cookies, baked fresh to order.
   flavors: [Chocolate chips, Nut mix]
+  # price: ""
+  # note: ""
 
 - name: Macarons
   emoji: "🌸"
   color: "#dcc3b5"
   image: macarons.jpg
+  description: Delicate homemade macarons with a smooth filling, made fresh to order.
   flavors: [Chocolate, Mascarpone]
+  # price: ""
+  # note: ""

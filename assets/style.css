@@ -130,3 +130,58 @@ footer .links a:hover{color:var(--wine)}
 .about .art{position:relative;overflow:hidden}
 .about .art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .logo img{height:46px;width:auto;display:block}
+
+/* ===== v3 additions: about page fixes + product pop-up ===== */
+
+/* about: photo frame must have its own width, otherwise it collapses on phones */
+.about .art{width:100%}
+.about{gap:56px}
+.about h1{line-height:1.15;margin-bottom:22px}
+.about p{line-height:1.75;margin-bottom:18px}
+@media(max-width:700px){
+  .about{gap:34px}
+  .about .art{max-width:280px}
+  .about h1{font-size:2.5rem;margin-bottom:18px;text-align:center}
+  .about p{text-align:center}
+  .about .cta{justify-content:center !important}
+}
+
+/* product cards: whole card opens the pop-up */
+.card{position:relative}
+.card .more{all:unset;cursor:pointer;font:inherit;color:inherit;display:inline}
+.card .more::after{content:"";position:absolute;inset:0;z-index:1;border-radius:26px}
+.card .more:focus-visible::after{outline:3px solid var(--wine);outline-offset:-3px}
+.card .btn{position:relative;z-index:2}
+.card .badge{position:absolute;top:12px;right:12px;font-family:'DM Sans',system-ui,sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.04em;background:rgba(255,255,255,.88);color:var(--wine);padding:5px 12px;border-radius:999px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* pop-up */
+html.lock{overflow:hidden}
+.pm{border:0;padding:0;background:var(--cream);color:var(--ink);border-radius:26px;width:calc(100% - 28px);max-width:780px;max-height:90vh;overflow:auto;box-shadow:0 24px 70px rgba(58,18,30,.35);margin:auto}
+.pm[open]{animation:pmIn .22s ease-out}
+.pm::backdrop{background:rgba(58,18,30,.55);backdrop-filter:blur(3px)}
+@keyframes pmIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+.pm-in{display:grid;grid-template-columns:1fr 1fr}
+.pm-img{position:relative;min-height:320px;display:grid;place-items:center;font-size:5rem;overflow:hidden}
+.pm-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pm-body{padding:34px 32px 30px;display:flex;flex-direction:column;gap:14px}
+.pm-body h3{font-family:'Lobster Two',cursive;font-size:2.2rem;line-height:1.1;color:var(--wine)}
+.pm-body p{color:var(--ink);line-height:1.7}
+.pm-facts{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:.92rem}
+.pm-facts dt{color:var(--muted);font-weight:600}
+.pm-facts dd{margin:0}
+.pm-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.pm-x{position:absolute;top:12px;right:12px;z-index:3;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:var(--wine);font-size:1.5rem;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.pm-x:hover{background:#fff}
+@media(max-width:700px){
+  .pm-in{grid-template-columns:1fr}
+  .pm-img{min-height:0;aspect-ratio:16/10;font-size:4rem}
+  .pm-body{padding:24px 22px 24px}
+  .pm-body h3{font-size:1.9rem}
+  .pm-actions .btn{flex:1;text-align:center}
+}
+
+/* buttons made from <button> should look like the link buttons */
+button.btn{font-family:inherit;cursor:pointer}
+button.btn.line{background:transparent}
+@media(max-width:700px){.pm-actions .btn{flex:1 1 100%}}
