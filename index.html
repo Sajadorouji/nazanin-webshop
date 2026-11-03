@@ -99,7 +99,6 @@ band: true
   document.querySelectorAll('.card .more').forEach(function (b) {
     b.addEventListener('click', function () { open(b.closest('.card')); });
   });
-  $('pm-x').addEventListener('click', function () { dlg.close(); });
   $('pm-close').addEventListener('click', function () { dlg.close(); });
   // click on the dark backdrop (the dialog element itself) closes it
   dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
