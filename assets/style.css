@@ -4,7 +4,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',system-ui,sans-serif;background:var(--blush);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--blush);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 .script{font-family:'Lobster Two','Lobster',cursive;font-weight:700;color:var(--wine)}
 
@@ -27,7 +27,7 @@ nav a:hover,nav a.on{color:var(--wine);border-color:var(--wine)}
 /* hero */
 .hero{max-width:1000px;margin:0 auto;padding:90px 22px 70px;text-align:center;position:relative}
 .hero .tag{display:inline-block;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
-.hero h1{font-size:clamp(3rem,10vw,6rem);line-height:1.05;margin-bottom:18px}
+.hero h1{font-size:clamp(3rem,10vw,6rem);line-height:1.7;margin-bottom:18px}
 .hero p.lead{font-size:1.2rem;color:var(--muted);max-width:480px;margin:0 auto 34px}
 .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .blob{position:absolute;border-radius:50%;z-index:-1;filter:blur(2px)}
@@ -50,7 +50,7 @@ h2.script{font-size:2.4rem;text-align:center;margin-bottom:8px}
 .pic{aspect-ratio:4/3;display:grid;place-items:center;font-size:4rem;position:relative;overflow:hidden}
 .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
-.body h3{font-family:'Lobster Two',cursive;font-size:1.7rem;color:var(--wine);line-height:1.1}
+.body h3{font-family:'Lobster Two',cursive;font-size:1.7rem;color:var(--wine);line-height:1.7}
 .flavors{display:flex;flex-wrap:wrap;gap:6px}
 .flavors span{font-size:.78rem;background:var(--blush);color:var(--wine-dark);padding:4px 11px;border-radius:999px}
 .card .btn{margin-top:auto;align-self:flex-start}
@@ -96,11 +96,11 @@ footer .links a:hover{color:var(--wine)}
 .slide img ~ .emoji{display:none}
 .slide .copy{position:relative;z-index:1;padding:34px 38px 54px 80px;color:#fff;max-width:560px}
 .slide .eyebrow{display:inline-block;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;opacity:.9;margin-bottom:8px}
-.slide h2{font-family:'Lobster Two',cursive;font-size:clamp(2rem,6vw,3.2rem);line-height:1.05;margin-bottom:8px}
+.slide h2{font-family:'Lobster Two',cursive;font-size:clamp(2rem,6vw,3.2rem);line-height:1.7;margin-bottom:8px}
 .slide p{opacity:.95;margin-bottom:18px}
 .slide .btn.fill{background:#fff;color:var(--wine);border-color:#fff}
 .slide .btn.fill:hover{background:var(--blush);border-color:var(--blush)}
-.slider .nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.85);color:var(--wine);font-size:1.7rem;line-height:1;cursor:pointer;transition:.2s;z-index:2}
+.slider .nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:0;background:rgba(255,255,255,.85);color:var(--wine);font-size:1.7rem;line-height:1.7;cursor:pointer;transition:.2s;z-index:2}
 .slider .nav:hover{background:#fff}
 .slider .prev{left:14px}.slider .next{right:14px}
 .dots{position:absolute;left:0;right:0;bottom:16px;display:flex;justify-content:center;gap:8px;z-index:2}
@@ -136,8 +136,8 @@ footer .links a:hover{color:var(--wine)}
 /* about: photo frame must have its own width, otherwise it collapses on phones */
 .about .art{width:100%}
 .about{gap:56px}
-.about h1{line-height:1.15;margin-bottom:22px}
-.about p{line-height:1.75;margin-bottom:18px}
+.about h1{line-height:1.7;margin-bottom:22px}
+.about p{line-height:1.7;margin-bottom:18px}
 @media(max-width:700px){
   .about{gap:34px}
   .about .art{max-width:280px}
@@ -165,13 +165,13 @@ html.lock{overflow:hidden}
 .pm-img{position:relative;min-height:320px;display:grid;place-items:center;font-size:5rem;overflow:hidden}
 .pm-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .pm-body{padding:34px 32px 30px;display:flex;flex-direction:column;gap:14px}
-.pm-body h3{font-family:'Lobster Two',cursive;font-size:2.2rem;line-height:1.1;color:var(--wine)}
+.pm-body h3{font-family:'Lobster Two',cursive;font-size:2.2rem;line-height:1.7;color:var(--wine)}
 .pm-body p{color:var(--ink);line-height:1.7}
 .pm-facts{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:.92rem}
 .pm-facts dt{color:var(--muted);font-weight:600}
 .pm-facts dd{margin:0}
 .pm-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
-.pm-x{position:absolute;top:12px;right:12px;z-index:3;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:var(--wine);font-size:1.5rem;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.pm-x{position:absolute;top:12px;right:12px;z-index:3;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:var(--wine);font-size:1.5rem;line-height:1.7;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
 .pm-x:hover{background:#fff}
 @media(max-width:700px){
   .pm-in{grid-template-columns:1fr}
